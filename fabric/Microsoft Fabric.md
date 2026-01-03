@@ -7,6 +7,7 @@
 [Reference](https://learn.microsoft.com/en-us/fabric/data-factory/decision-guide-data-integration)
 ![](i/fab-decision-tree-ingestion.svg)
 
+
 [Reference](https://milescole.dev/data-engineering/2024/09/17/To-V-Order-or-Not.html)
 ![](i/fab-decision-tree-vorder.png)
 ### Transformation
