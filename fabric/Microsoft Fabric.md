@@ -5,11 +5,11 @@
 ### Ingestion
 
 [Reference](https://learn.microsoft.com/en-us/fabric/data-factory/decision-guide-data-integration)
-![Ingestion Decision Tree](./img/fab-decision-tree-ingestion.svg)
+![](i/fab-decision-tree-ingestion.svg)
 
 [Reference](https://milescole.dev/data-engineering/2024/09/17/To-V-Order-or-Not.html)
 ![Vorder Decision Tree](./img/fab-decision-tree-vorder.png)
-
+![](i/fab-decision-tree-vorder.png)
 ### Transformation
 
 - [Configure Auto Table Stats Collection](https://learn.microsoft.com/en-us/fabric/data-engineering/automated-table-statistics)
