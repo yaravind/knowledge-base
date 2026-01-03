@@ -8,7 +8,6 @@
 ![](i/fab-decision-tree-ingestion.svg)
 
 [Reference](https://milescole.dev/data-engineering/2024/09/17/To-V-Order-or-Not.html)
-![Vorder Decision Tree](./img/fab-decision-tree-vorder.png)
 ![](i/fab-decision-tree-vorder.png)
 ### Transformation
 
