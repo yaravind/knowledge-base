@@ -22,6 +22,7 @@
 - Executor: Executors are the **processes** that run on those nodes to execute tasks assigned by the Spark driver.
 - In Fabric, there is a defined 1:1 elationship between nodes and executors. A Node will run only 1 executor. (In traditional Spark, a Node can host multipe executors).
 - Autoscale manages the number of **nodes** based on **overall activity,** while dynamic allocation manages the number of **executors** based on the workload **demands of individual Spark applications**. Therefore, _dynamic allocation can function without autoscale being enabled,_ allowing Spark to adapt to workload changes by adjusting the number of executors as needed, even if the number of nodes remains constant.
+- When Dynamic Allocation option is enabled, for every spark application submitted, **the system reserves executors during the job submission step based on the Max Nodes**, which were specified by the user to support successful auto scale scenarios.
 
 ![](i/6b7981fe-ece4-4bf7-aba7-475e3d159d12.png)
 
