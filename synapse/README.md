@@ -16,6 +16,8 @@
 - A Spark Instance has a minimum of 3 nodes ( 1 head node and 2 worker nodes)
 - When #autoscale is disabled, the number of nodes set is fixed and those many nodes are created when a new Spark Instance is created.
 
+> Elastic Pool Storage feature can be used to avoid "Out of Disk Space" errors. Spark jobs write shuffle map outputs, shuffle data and spilled data to local VM disks. Examples of operations that could utilize local disk are sort, cache, and persist.
+
 ### Example
 
 - Spark Pool definiton: 20 nodes, no autoscalong. his means that all 20 nodes are available for processing jobs.
