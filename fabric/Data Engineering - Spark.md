@@ -102,6 +102,26 @@ While Pools define the hardware/physical (node family, node size, min/max nodes 
 - #fabric/workspace/default All workspaces are defaulted to `writeHeavy`
 - Can be configured through Environment or at runtime `spar.conf.set`
 
+## High Concurrency Mode
+
+High Concurrency Mode allows multiple notebooks to share a single Spark session. To make this possible without notebooks interfering with each other, Microsoft uses two key mechanisms: 
+
+1. the Read-Eval-Print Loop (REPL): 
+2. Virtual Core (vCore) assignment.
+
+- Only applicable for Notebooks
+- Session sharing is within a single user boundary
+- Applicable for Custom Pools
+- Only the initiating session that starts the shared Spark application is billed. All subsequent sessions that share the same Spark session do not incur additional billing 
+
+![](i/8e7caa64-11a9-40ab-82fe-f427bb6d6ff3.png)
+### Summary
+
+| Feature |	Role in High Concurrency |
+|  --| --| 
+| REPL Core	| Provides logical isolation so notebooks can share a session without variable naming conflicts.| 
+| vCore Assignment	| Provides resource management and cost optimization, allowing 5 notebooks to share the same billed compute.| 
+
 ## Decision Tree
 
 ```mermaid
