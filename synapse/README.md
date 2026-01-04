@@ -51,3 +51,4 @@ graph TD
 ## References
 
 - [Apache Spark pool configurations in Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-pool-configurations)
+- [Reservation of Executors as part of Dynamic Allocation in Synapse Spark Pools](https://learn.microsoft.com/en-us/azure/synapse-analytics/spark/reservation-of-executors-in-dynamic-allocation)
