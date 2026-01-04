@@ -85,17 +85,20 @@ While Pools define the hardware/physical (node family, node size, min/max nodes 
 
 ## Resource Profile
 
+[Reference](https://learn.microsoft.com/en-us/fabric/data-engineering/configure-resource-profile-configurations)
+
 - Pre-bundled (Property bag-based approach) set of configurations to optimize ETL, BI like workloads
-- #spark/conf : `spark.fabric.resourceProfile`
+- #fabric/spark/conf : `spark.fabric.resourceProfile`
 - Four out-of-box profiles
-	1. writeHeavy: High frequency ingestion
+	1. `writeHeavy`: High frequency ingestion
 		- Use for Landing, Raw and Refined Zones
-	2. readHeavyForSpark: Set for Spark workloads with frequent reads
+	2. `readHeavyForSpark`: Set for Spark workloads with frequent reads
 		- Use for Certified Zone
-	3. readHeavyForBI: Set for Power BI queries on Delta tables (Direct Lake mode)
+	3. `readHeavyForBI`: Set for Power BI queries on Delta tables (Direct Lake mode)
 		- Use for Certified and/or Extended-Certified or Purposed Zones
-	4. custom
-- All Wo
+	4. `custom`
+- #fabric/workspace/default All workspaces are defaulted to `writeHeavy`
+- Can be configured through Environment or at runtime `spar.conf.set`
 
 ## Decision Tree
 
