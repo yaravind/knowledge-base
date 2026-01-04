@@ -14,6 +14,7 @@
 	1. Head node: runs Livy, YARN RM, ZooKeeper & Spark Driver
 	2. Worker node
 - A Spark Instance has a minimum of 3 nodes ( 1 head node and 2 worker nodes)
+- When #autoscale is disabled, the number of nodes set is fixed and those many nodes are created when a new Spark Instance is created.
 
 ### Example
 
