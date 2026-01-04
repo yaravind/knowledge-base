@@ -4,14 +4,10 @@
 
 ## Action Items
 
-#todo
-
-Permissions
-
-| Admin | Member | Contributor | Viewer |
-| --- | ----| --- | --- |
-| Create Spark Pools based on the workloads | Delegate Environment creation | Delegate Environment creation | |
-| Precreate Environment for Medallian Zones based on Resource Profiles | | | |
+- #todo  Admin role: Create Spark Pools based on the workloads 
+- #todo Member/Contribute role: Delegate Environment creation
+- #todo Precreate Environment for Medallian Zones based on Resource Profiles
+- #todo Update framework code to set the resource profiles by zone
 
 ## Anatomy of a Spark Instance
 
