@@ -48,6 +48,8 @@ flowchart TB
 - No “warm pool reuse” or regional exhaustion logic
 - More predictable and consistent startup behavior than Starter Pools
 
+> New custom pool creation do not allow you to set the Runtime version, libraries, spark configs, etc. These need to be set through **Environment** artifact. When not selected, the **Default Environment** (configured for Workspace) is used.
+
 ### Default Pool
 
 - Is **not** a third type of pool alongside Starter Pool and Custom Pool. 
