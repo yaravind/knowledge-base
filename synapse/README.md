@@ -1,6 +1,6 @@
 # README
 
-#synapse #spark
+#synapse/spark
 
 ## Pool vs Instance
 
