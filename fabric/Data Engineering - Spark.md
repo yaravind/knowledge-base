@@ -109,7 +109,8 @@ High Concurrency Mode allows multiple notebooks to share a single Spark session.
 1. the Read-Eval-Print Loop (REPL): In a standard Spark session, a notebook has its own dedicated Spark application. In High Concurrency Mode, one Spark application hosts multiple notebooks. The REPL is the engine that makes this isolation possible:
 	- Isolation: Each notebook attached to a shared session runs within its own individual REPL core. This provides a "sandbox" for each notebook's code.
 	- Variable Protection: Because each notebook has its own REPL core, local variables are isolated. For example, if "Notebook A" and "Notebook B" both define a variable named df, they will not overwrite each other because they live in separate REPL environments within the same Spark application.
-2. Virtual Core (vCore) assignment.
+2. Virtual Core (vCore) assignment: 
+	- FAIR Scheduling: To prevent one notebook from "hogging" all the compute power while others starve, Fabric uses a FAIR allocation method. Executors (the workers that do the heavy lifting) are distributed across the active REPL cores based on demand, ensuring that all notebooks in the session get a fair share of the available vCores.
 
 ![](i/8e7caa64-11a9-40ab-82fe-f427bb6d6ff3.png)
 ### Summary
@@ -124,7 +125,7 @@ High Concurrency Mode allows multiple notebooks to share a single Spark session.
 | REPL Core	| Provides logical isolation so notebooks can share a session without variable naming conflicts.| 
 | vCore Assignment	| Provides resource management and cost optimization, allowing 5 notebooks to share the same billed compute.| 
 
-> If a dataframe is cached in one notebook, can that be used in other notebooks in high concurrency mode?
+> **If a dataframe is cached in one notebook, can that be used in other notebooks in high concurrency mode?**
 > No, you cannot directly access a cached DataFrame from one notebook in another, even when they are running in High Concurrency (HC) mode. While HC mode allows notebooks to share the same underlying Spark application and physical resources, the REPL (Read-Eval-Print Loop) mechanism ensures that each notebook's execution environment is strictly isolated.
 
 ## Decision Tree
