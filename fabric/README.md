@@ -75,6 +75,23 @@ flowchart TB
 
 ### Default Pool
 
+- Is **not** a third type of pool alongside Starter Pool and Custom Pool. 
+- Instead, it tells which pool Fabric will automatically use when you run Spark workloads and you haven’t explicitly chosen a pool
+- Configurable per workspace
+	- A _Starter Pool _can be set as the default pool
+		- This is the usual setup for most workspaces
+		- Fast startup, no cluster management, backed by Fabric-managed resources
+	- A _Custom Pool_ can also be set as the default pool
+		- Useful when you want all Spark workloads to use specific sizing, autoscaling, or configs by default
+
+**Why this matters**
+
+Choosing the right default pool:
+	- Helps control cost and performance
+	- Avoids accidental execution on an expensive pool
+	- Ensures consistent runtime behavior across notebooks and jobs
+
+
 https://milescole.dev/data-engineering/2024/08/22/Databricks-to-Fabric-Spark-Cluster-Deep-Dive.html
 
 ### Spark session startup flow
