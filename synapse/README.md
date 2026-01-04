@@ -39,6 +39,15 @@ graph TD
     B -- No --> G
 ```
 
+## Dynamic Allocation
+
+#spark/dynamic-allocation
+
+- #synapse/autoscale enables (or accounts for) diverse workloads like data engineering, data exploration using notebooks, data science etc. So it is essentially at higher **workload level**
+- dynamic allocation is finer-level i.e. **application level**
+- Enable dynamic allocation of executors in scenarios where **the executor requirements are vastly different across stages of a Spark Job** or t**he volume of data processed fluctuates with time**. 
+- For dynamic allocation, the platform **reserves** the number of executors based on the _maximum limit_ specified by the user for any spark application submitted.
+
 ## References
 
 - [Apache Spark pool configurations in Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-pool-configurations)
