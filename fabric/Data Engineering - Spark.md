@@ -79,6 +79,12 @@ Choosing the right default pool:
 	- Avoids accidental execution on an expensive pool
 	- Ensures consistent runtime behavior across notebooks and jobs
 
+### Key Takeaway
+
+1. Starter Pools optimize for fast and bursty interactive workloads
+2. Custom Pools optimize for predictable execution characteristics
+3. Both provision compute on demand when needed
+
 ## Environment
 
 While Pools define the hardware/physical (node family, node size, min/max nodes etc.) aspects of the cluster, Environments define the "software" (custom libraries, custom Spark Config, Spark/Fabric Runtime version) aspect of the cluster.
@@ -203,12 +209,6 @@ flowchart TB
     Session --> Driver
     Driver --> Workers
 ```
-
-### Key Takeaway
-
-1. Starter Pools optimize for fast and bursty interactive workloads
-2. Custom Pools optimize for predictable execution characteristics
-3. Both provision compute on demand when needed
 
 ## Reference
 
