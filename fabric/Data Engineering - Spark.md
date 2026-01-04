@@ -43,7 +43,7 @@ flowchart TB
     HeadNode --> WorkerN
 ```
 
-## Pools
+## Pool
 
 ### Starter Pool
 
@@ -79,9 +79,23 @@ Choosing the right default pool:
 	- Avoids accidental execution on an expensive pool
 	- Ensures consistent runtime behavior across notebooks and jobs
 
-## Environments
+## Environment
 
 While Pools define the hardware/physical (node family, node size, min/max nodes etc.) aspects of the cluster, Environments define the "software" (custom libraries, custom Spark Config, Spark/Fabric Runtime version) aspect of the cluster.
+
+## Resource Profile
+
+- Pre-bundled (Property bag-based approach) set of configurations to optimize ETL, BI like workloads
+- #spark/conf : `spark.fabric.resourceProfile`
+- Four out-of-box profiles
+	1. writeHeavy: High frequency ingestion
+		- Use for Landing, Raw and Refined Zones
+	2. readHeavyForSpark: Set for Spark workloads with frequent reads
+		- Use for Certified Zone
+	3. readHeavyForBI: Set for Power BI queries on Delta tables (Direct Lake mode)
+		- Use for Certified and/or Extended-Certified or Purposed Zones
+	4. custom
+- All Wo
 
 ## Decision Tree
 
