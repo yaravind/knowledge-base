@@ -2,6 +2,17 @@
 
 #fabric/de/spark
 
+## Action Items
+
+#todo
+
+Permissions
+
+| Admin | Member | Contributor | Viewer |
+| --- | ----| --- | --- |
+| Create Spark Pools based on the workloads | Delegate Environment creation | Delegate Environment creation | |
+| Precreate Environment for Medallian Zones based on Resource Profiles | | | |
+
 ## Anatomy of a Spark Instance
 
 ```mermaid
@@ -68,7 +79,11 @@ Choosing the right default pool:
 	- Avoids accidental execution on an expensive pool
 	- Ensures consistent runtime behavior across notebooks and jobs
 
-### Decision Tree
+## Environments
+
+While Pools define the hardware/physical (node family, node size, min/max nodes etc.) aspects of the cluster, Environments define the "software" (custom libraries, custom Spark Config, Spark/Fabric Runtime version) aspect of the cluster.
+
+## Decision Tree
 
 ```mermaid
 flowchart TD
@@ -179,4 +194,6 @@ flowchart TB
 3. Both provision compute on demand when needed
 
 ## Reference
+
+- [Performance - Optimized Write](https://milescole.dev/data-engineering/2024/08/16/A-Deep-Dive-into-Optimized-Write-in-Microsoft-Fabric.html)
 
